@@ -1,0 +1,48 @@
+{
+  "server": {
+    "addr": ":8080",
+    "verbose": true
+  },
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "allowed": [],
+      "denied": []
+    },
+    {
+      "username": "user1",
+      "password": "password1",
+      "allowed": ["google.com", "github.com", "stackoverflow.com"],
+      "denied": ["facebook.com", "twitter.com", "instagram.com"]
+    },
+    {
+      "username": "developer",
+      "password": "dev123",
+      "allowed": ["github.com", "stackoverflow.com", "golang.org"],
+      "denied": ["facebook.com", "twitter.com", "youtube.com"]
+    }
+  ],
+  "rules": [
+    {
+      "type": "deny",
+      "pattern": "malware.com",
+      "username": ""
+    },
+    {
+      "type": "deny",
+      "pattern": "phishing.com",
+      "username": ""
+    },
+    {
+      "type": "allow",
+      "pattern": "trusted.com",
+      "username": ""
+    },
+    {
+      "type": "deny",
+      "pattern": "gaming.com",
+      "username": "user1"
+    }
+  ]
+} 
